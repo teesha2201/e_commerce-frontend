@@ -1,0 +1,56 @@
+.homesuperContainer{
+        margin-top:5%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap:20vw 5vh;
+        justify-content: space-evenly;
+        /* align-items: center; */
+        border:2px solid green;
+        
+    }
+.homeTopheading{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border:2px solid blue;
+}
+.homeTopheading h1{
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    
+}
+
+/* .slideShowimage{ 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height:60vh;
+    background-image: url('https://m.media-amazon.com/images/I/61+r3+JstZL._SL1500_.jpg'),linear-gradient(white,gray);
+    background-size: auto 50vh;
+    background-repeat: no-repeat;
+    background-position: center; 
+    animation: imgchange 6s ease-in-out 0s infinite forwards;
+    
+}
+ @keyframes imgchange {
+    0%{
+        background-color: black;
+        background-image: url('https://images-eu.ssl-images-amazon.com/images/G/31/img23/Wireless/CatPage/JUPITER/Phase3/Header/Header_1500x300_01.gif'),linear-gradient(white,gray);
+    }
+    20%{
+        background-color: black;
+        background-image: url('https://cdn.zeebiz.com/sites/default/files/styles/zeebiz_850x478/public/2022/09/15/200530-untitled-design-2022-09-15t174229297.jpg?itok=kfAdZhu4');
+        background-image:url('https://m.media-amazon.com/images/I/81SocKy8ghL._SL1500_.jpg'),linear-gradient(white,rgb(228, 230, 216)) ;
+    }
+    40%
+    {
+        background-color: black;
+        background-image: url('https://m.media-amazon.com/images/I/61EXU8BuGZL._SL1100_.jpg'),linear-gradient(white,rgb(228, 230, 216));
+    }
+ 
+    100%{
+        background-color: rgb(231, 228, 93);
+        background-image: url('https://m.media-amazon.com/images/I/61uGyQfTscL._SL1001_.jpg'),linear-gradient(rgb(177, 173, 103),rgb(216, 225, 133));
+    }
+}  */

@@ -1,0 +1,121 @@
+/* .MainrouteSuperParent{
+    width:100vw;
+    border: 2px solid black;
+    height: 12vh; 
+} */
+.routeSuperParent{
+    
+    display: flex;   
+    justify-content: space-evenly;
+    width:100%;
+    border: 2px solid black;
+    height: 12vh;
+    /* background-color: rgb(156, 209, 209); */
+    background-color: white;
+    box-sizing: border-box;
+}
+.parent2{
+    /* width: 50%; */
+    height: 70%;
+    display: flex;
+    flex-direction: row;
+    list-style-type:none;
+    gap:1%;
+    justify-content: center;
+    align-items: baseline;
+    /* border: 2px solid red; */
+}
+.firstheading{
+    font-size: 22px;
+    width: 10vw;
+    display: flex;
+    
+    /* border:2px solid black; */
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.linkParent{
+    display: flex;
+    flex-direction: row;
+    list-style-type:none;
+    gap:2vw;
+}
+ul li .links{
+    text-decoration-line: none;
+    font-size: 18px;
+}
+.links:hover{
+    background-color: rgb(189, 129, 200);
+}
+.all_sub{
+    position: relative;
+    top:5vh;
+    background-color: lightgray;
+    
+}
+.parent3{
+    width: 100%;
+    height: 10vh;
+    display: flex;
+    flex-direction: row;
+    list-style-type:none;
+    /* justify-content: center;
+    align-items: center; */
+    gap:1vw;
+    /* border: 2px solid blue; */
+}
+.searchbar{
+    width:12vw;
+    height: 3vh;
+}
+.iconsParent{
+    width:100%;
+    display: flex;
+    justify-content: baseline;
+    align-items: center;
+    flex-direction: row;
+    list-style-type:none;
+    gap:2vw;
+}
+li i{
+    font-size: 24px;
+}
+/* .slideShowimage{ 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height:60vh;
+    background-image: url('https://m.media-amazon.com/images/I/61+r3+JstZL._SL1500_.jpg'),linear-gradient(white,gray);
+    background-size: auto 50vh;
+    background-repeat: no-repeat;
+    background-position: center; */
+    /* animation: imgchange 6s ease-in-out 0s infinite forwards; */
+    /* background-color: rgb(148, 139, 139); */
+/* } */
+/* @keyframes imgchange {
+    0%{
+        background-color: black;
+        background-image: url('https://images-eu.ssl-images-amazon.com/images/G/31/img23/Wireless/CatPage/JUPITER/Phase3/Header/Header_1500x300_01.gif'),linear-gradient(white,gray);
+    }
+    20%{
+        background-color: black;
+        background-image: url('https://cdn.zeebiz.com/sites/default/files/styles/zeebiz_850x478/public/2022/09/15/200530-untitled-design-2022-09-15t174229297.jpg?itok=kfAdZhu4')
+        background-image:url('https://m.media-amazon.com/images/I/81SocKy8ghL._SL1500_.jpg'),linear-gradient(white,rgb(228, 230, 216)) ;
+    }
+    40%
+    {
+        background-color: black;
+        background-image: url('https://m.media-amazon.com/images/I/61EXU8BuGZL._SL1100_.jpg'),linear-gradient(white,rgb(228, 230, 216));
+    }
+ 
+    100%{
+        background-color: rgb(231, 228, 93);
+        background-image: url('https://m.media-amazon.com/images/I/61uGyQfTscL._SL1001_.jpg'),linear-gradient(rgb(177, 173, 103),rgb(216, 225, 133));
+    }
+} 
+
+/* .slideimage{
+    
+    width: auto;
+    height:50vh;
+    
+} */

@@ -1,0 +1,23 @@
+body{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+.SuperparentDivElectronics{
+   position: absolute;
+   top:200%;
+   left:0;
+   width:100%;
+    min-height: 100%;
+    
+   border: 2px solid blue;
+}
+.parentDivElectronics{
+    display: flex;
+   
+}
+.electronicsProductName{
+    display: flex;
+    flex-direction: column;
+    border: 2px solid rgb(132, 0, 255);
+}
