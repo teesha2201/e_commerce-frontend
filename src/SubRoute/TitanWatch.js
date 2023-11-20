@@ -1,29 +1,29 @@
-import React,{useState,useEffect} from 'react';
-import { Outlet,NavLink } from 'react-router-dom';
-import '../SubStyle/Laptop.css'
-import AddFooter from '../../Component/Footer';
+import React,{useEffect,useState} from "react";
+// import '../SubStyle/Laptop.css'
+import {Outlet,NavLink} from "react-router-dom";
+import AddFooter from "../Component/Footer";
 
-const Snacks = () => {
-  const [snacks,setSnacks] = useState([])
-
-    useEffect(()=>{
+const Titan = ()=>{
+    const [watch,setWatch] =useState([])
  
-        async function apiFun(){
-          const fetchdata = await fetch("https://new-ecommerce-backend-m62a.onrender.com/api/getdatafromproductstore")
-          const res = await fetchdata.json();
-          console.log(res);
-          setSnacks(res);
-           }
-           apiFun();
-       },[])
-  return (
-    <>
-    <div className='laptopsuperContainer'>
-    <div className="laptopcart-wrapper">
-            {snacks.filter((item)=>item.category==="grocery" && item.subCategory ==="grocery_snacks").map((item)=>{
+    useEffect(()=>{
+      async function apiFun(){
+        const fetchdata = await fetch("https://new-ecommerce-backend-m62a.onrender.com/api/getdatafromproductstore")
+        const res = await fetchdata.json();
+        console.log(res);
+      
+        setWatch(res);
+         }
+         apiFun();
+     },[])
+    return(
+        <>
+           <div className='laptopsuperContainer'>
+                <div className="laptopcart-wrapper">
+            {watch.filter((item)=>item.category==="electronics" && item.subCategory ==="titanWatch").map((item)=>{
                 return (
                     <div className="laptopimg-wrapper item" key={item.id}>
-                      <NavLink to={`/moreDetail/${item.id}`}>
+                      <NavLink to={`/moreDetails/${item.id}`}>
                       <img src={item.image} alt="Not Found"/>
                       </NavLink>
                        <br/>
@@ -31,7 +31,7 @@ const Snacks = () => {
                         <span className='Brand'>    
                         </span>
                         <span className='ProductName'>
-                          {item.product_name}
+                          {item.product_name.slice(0,30)}
                         </span>
                         <span></span>
                         <h3>
@@ -50,14 +50,10 @@ const Snacks = () => {
                     )
                   })}
             </div>
-    </div>
-    <Outlet/>
-    <AddFooter/>
-    </>
-  )
+      </div>
+      <Outlet/>
+      <AddFooter/>
+        </>
+    )
 }
-
-export default Snacks
-
-
-
+export default Titan

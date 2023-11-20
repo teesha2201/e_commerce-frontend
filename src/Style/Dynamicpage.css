@@ -1,0 +1,115 @@
+.dynamicParent{
+    margin-top:5%;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;   
+}
+.dynamiccontainer{
+   display: flex;
+   flex-direction: row;
+   justify-content: space-evenly;  
+}
+.dynamicimgparent{
+    
+    height:70vh;
+    border: 20px solid white;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgb(235, 242, 245);
+    box-shadow: 5px 5px 10px gray;
+    border-radius: 1%;
+   
+}
+.dynamicimgparent img{
+    width:80%;
+    border:5px solid rgb(225, 235, 225);
+    height:70%
+}
+.dynamicDescripition{
+    width:34%; 
+
+ 
+}
+.dynamicDescripition ul li{ 
+    list-style: none;
+    font-size: 20px;
+    line-height: 4vh;
+}
+.dynamicDescripition ul h2{
+    color:rgb(14, 14, 100);
+}
+.dynamicButtonParent{
+    display: flex;
+    flex-direction:row; 
+    justify-content: space-between;
+ 
+}
+
+.dynamicButtonParent .goBackbtn{
+        font-size: 24px;
+        font-weight: bold;
+        font-family: 'Times New Roman', Times, serif;
+        background-color: rgb(30, 81, 135);
+        color:white;
+        border:6px solid rgba(255, 255, 255, 0.59);
+}
+ .fashionaddtocartbtn
+{
+        font-size: 24px;
+        font-weight: bold;
+        font-family: 'Times New Roman', Times, serif;
+        background-color: rgb(193, 206, 222);
+        color:white;
+        border:6px solid gray;
+   
+  
+}
+ .fashionaddtocartbtn:hover{
+    background-color: thistle;
+}
+@media screen and (min-width:300px) and (max-width:667px){
+    .dynamicParent{
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        border:2px solid red;
+      }
+    
+    .dynamicDescripition{
+        width:100%;
+        /* border: 2px solid black; */
+        box-sizing: border-box;
+    }
+    .dynamicDescripition ul h2 {
+        font-size: 24px;
+    }
+    .dynamicDescripition ul li{
+        font-size: 20px;
+    }
+    .dynamicButtonParent {
+        display: flex;
+        flex-direction: row;
+    }
+    
+}
+@media screen and (min-width:668px) and (max-width:1180px){
+    .dynamicParent{
+        width:80%;
+    }
+    .dynamicDescripition{
+        width:50%;
+    }
+    .dynamicDescripition ul h2 {
+        font-size: 40px;
+    }
+    .dynamicDescripition ul li{
+        font-size: 45px;
+    }
+    .dynamicButtonParent .goBackbtn{
+        width:100%;
+    }
+    
+}
+

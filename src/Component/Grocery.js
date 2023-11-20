@@ -1,13 +1,16 @@
 import React,{useState,useEffect} from 'react'
 // import axios from "axios";
-import "../Style/Beauty.css"
+import "../Style/Grocery.css"
 import { NavLink ,Outlet} from 'react-router-dom';
-
+import AddFooter from './Footer';
+import {useDispatch} from "react-redux";
+import {addtoCart} from "../Redux/Slice";
 const Grocery = () => {
     const [grocery,setGrocery] = useState([])
+    const dispatch = useDispatch();
     useEffect(()=>{
         async function apiFun(){
-          const fetchdata = await fetch("http://localhost:5005/api/grocery")
+          const fetchdata = await fetch("https://new-ecommerce-backend-m62a.onrender.com/api/getdatafromproductstore")
           const res = await fetchdata.json();
           console.log(res);
           // console.log(res[2].productDetail[3]);
@@ -18,42 +21,46 @@ const Grocery = () => {
 
   return (
     <>
-    <div className='superContainer'>
-        <div className='Sub-route-Container'>
+    <div className='grocerysuperContainer'>
+        <div className='grocery-Sub-route-Container'>
           <ul>
-            <li><NavLink to="/beautyproduct/mac">Snacks</NavLink></li>
-            <li><NavLink to="/beautyproduct/swissBeauty">TeaCofeeBeverages</NavLink></li>
-            <li><NavLink to="/beautyproduct/skinCare">Indaian Regular Food</NavLink></li>
+            <li><NavLink to="/grocery/snacks">Snacks</NavLink></li>
+            <li><NavLink to="/grocery/teaCofeeBeverages">TeaCofeeBeverages</NavLink></li>
+            <li><NavLink to="/grocery/indianRegularFood">Indaian Regular Food</NavLink></li>
           </ul>
         </div>
-        <div className="beautycart-wrapper">
-        {grocery.map((item)=>{
+        <div className="grocerycart-wrapper">
+        {grocery.filter((item)=>item.category==="grocery").map((item)=>{
+             const {
+              id = item.id,
+              image = item.image,
+              price= parseInt(item.price),
+              // Brand = item.Number_of_Items
+            }= item;
             return (
                 
-                <div className="beautyimg-wrapper item" key={item.id}>
-                  <NavLink to={`/moreDetails/${item.id}`}>
-                  <img src={item.image} alt="Not Found"/>
+                <div className="groceryimg-wrapper item" key={item.id}>
+                  <NavLink to={`/moreDetail/${item.id}`}>
+                    <img src={item.image} alt="Not Found"/>
                   </NavLink>
                    <br/>
-                <div className="beautytext-wrapper item">
+                <div className="grocerytext-wrapper item">
                     <span className='Brand'>
-                       {/* {item.company_name} */}
+                      
                     </span>
-                    {/* <br/> */}
-                    <span>
+                   
+                    <span className='ProductName'>
                     {item.product_name}
                     </span>
-                    {/* <br/> */}
-                    <span>
-                      {/* {item.product_details.slice(0,30)} */}
-                    </span>
-                    {/* <br/> */}
-                    <span>
+                  
+                    <span className='Price'>
                        Rs.{item.price}
                     </span>
-                    <div className="beautybtn-wrapper item ">
-                      <button onClick={()=>{}} className='addtocartbtn'>Add To Cart</button>
-                      <button onClick={()=>{}} className='removeitembtn'>Remove item </button>
+                    <div className="grocerybtn-wrapper item ">
+                    <NavLink to={`/addtocart/${item.id}`}>  
+                      <button onClick={()=>dispatch(addtoCart({id,image,price}))} className='groceryaddtocartbtn'>Add To Cart</button>
+                    </NavLink>  
+                      <button onClick={()=>{}} className='groceryremoveitembtn'>Remove item </button>
                     </div>
                 </div>
                
@@ -63,6 +70,7 @@ const Grocery = () => {
         </div>
     </div>
     <Outlet/>
+    <AddFooter/>
     </>    
   )
 }

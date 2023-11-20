@@ -3,7 +3,7 @@ body{
     padding:0;
     box-sizing: border-box;
 }
-.electronicssuperContainer{
+.allsuperContainer{
     margin-top:5%;
     display: flex;
     flex-direction: row;
@@ -12,7 +12,7 @@ body{
     justify-content: space-evenly;  
     /* border: 2px solid red;  */
 }
-.electronics-Sub-route-Container {
+.all-Sub-route-Container {
    
     height:42vh;
     width:12vw;
@@ -24,12 +24,12 @@ body{
     box-shadow: 5px 5px 10px gray;
     
 }
-.electronics-Sub-route-Container ul li{
+.all-Sub-route-Container ul li{
     font-size:20px;
     /* list-style: none; */
     line-height: 5vh;
 }
-.electronicscart-wrapper{
+.allcart-wrapper{
     width:75%;
     /* line-height: 1vh; */
     display: flex;
@@ -41,7 +41,7 @@ body{
     min-height: 70vh;
     /* border:2px solid black; */
 }
-.electronicsimg-wrapper{
+.allimg-wrapper{
     width:18vw;
     height: 60vh;
     border:2px gainsboro;
@@ -54,49 +54,50 @@ body{
     transition: 0.5s;
 
 }
-.electronicsimg-wrapper:hover{
+.allimg-wrapper:hover{
     transform: scale(1.1);
     background-color: white;
     box-shadow: 5px 5px 10px gray;
 }
 
-.electronicsimg-wrapper img{
+.allimg-wrapper img{
     width:15vw;
     height: 34vh;
     /* box-shadow: 5px 5px 10px gray; */
 }
 
-.electronicstext-wrapper{
+.alltext-wrapper{
     display: flex;
     flex-direction: column;
     min-height: 30%;
     font:12%;
-    line-height: 4vh;
+    line-height: 5vh;
 
     
 }
-.electronicstext-wrapper .Brand{
+.alltext-wrapper .Brand{
     font-weight: bold;
     border:2px solid lightblue
 }
-.electronicstext-wrapper .ProductName{
-    /* border:2px solid green; */
+.alltext-wrapper .ProductName{
+    border:2px solid green;
     font-weight: bold;
-    font-size: 18px;
+    font-size: 20px;
+    text-transform: capitalize;
 }
-.electronicstext-wrapper .Price{
+.alltext-wrapper .Price{
     font-weight: bold;
 }
-.electronicsbtn-wrapper{
+.allbtn-wrapper{
     display: flex;
     justify-content: space-evenly;
     align-items: baseline;
     gap:2vw 2vh;
 
 }
-.electronicsbtn-wrapper button{
+.allbtn-wrapper button{
    
-    border:2px solid red;
+    /* border:2px solid red; */
     font-size: 18px;
     display: flex;
     flex-direction: row;
@@ -105,75 +106,76 @@ body{
     box-shadow: 5px 5px 10px gray;
  }
 
-.electronicsbtn-wrapper .electronicsaddtocartbtn
+.allbtn-wrapper .alladdtocartbtn
 {
     background-color:rgb(113, 131, 170);
     border: 4px solid rgb(14, 49, 71);
     color:white;
 }
-.electronicsbtn-wrapper .electronicsaddtocartbtn:hover{
+.allbtn-wrapper .alladdtocartbtn:hover{
     background-color: thistle;
 }
-.electronicsbtn-wrapper .electronicsremoveitembtn{
+.allbtn-wrapper .allremoveitembtn{
     background-color:rgb(195, 163, 209);
     border: 4px solid rgb(73, 79, 82);
     
 }
-.electronicsbtn-wrapper .electronicsremoveitembtn:hover{
+.allbtn-wrapper .allremoveitembtn:hover{
     background-color: rgb(157, 71, 157);
-
+    border: 4px solid rgb(73, 79, 82);
 }
+
 @media screen and (min-width:300px) and (max-width:667px){
-    .electronics-Sub-route-Container {
+
+    .all-Sub-route-Container{
         display: none;
-    }
-    .electronicscart-wrapper{
-        display: flex;
+
+    }  
+
+    .allcart-wrapper{
+        display:flex;
         flex-direction: column;
+        justify-content: center;
         width:100%;
-    }
-    .electronicsimg-wrapper{
-        width:80vw;
+        border:2px solid black;
+        gap:2vh;
         
+
     }
-    .electronicsimg-wrapper img{
-        width:60vw;
+    .allimg-wrapper{
+        width:70%; 
+        box-shadow: 5px 5px 10px gray;
+        border:4px solid lightblue
+    }
+    .allimg-wrapper img{
+        width:70%;
         height: 34vh;
         /* box-shadow: 5px 5px 10px gray; */
-        background-color: aliceblue;
     }
-   
-
 }
 @media screen and (min-width:668px) and (max-width:1180px)
 {
-    .electronics-Sub-route-Container {
+    .all-Sub-route-Container {
         display: none;
     }
-    .electronicscart-wrapper{
+    .allcart-wrapper{
         display: flex;
         flex-direction: column;
         width:100%;
     }
-    .electronicsimg-wrapper{
+    .allimg-wrapper{
         width:68vw;    
     }
-    .electronicsimg-wrapper img{
+    .allimg-wrapper img{
         width:60vw;
         height: 34vh;
         /* box-shadow: 5px 5px 10px gray; */
         background-color: aliceblue;
     }
-    .electronicstext-wrapper{
-        line-height: 5vh;
-    }
-    .electronicstext-wrapper .ProductName{
-        font-size:30px;
-    }
-    .electronicsbtn-wrapper button{
+    .allbtn-wrapper button{
         font-size: 30px;
     }
-    .electronicstext-wrapper .Price{
+    .alltext-wrapper .Price{
         font-size:30px;
     }
 } 

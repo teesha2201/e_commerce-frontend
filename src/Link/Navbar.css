@@ -1,57 +1,86 @@
-/* .MainrouteSuperParent{
-    width:100vw;
-    border: 2px solid black;
-    height: 12vh; 
-} */
+
 .routeSuperParent{
-    
     display: flex;   
-    justify-content: space-evenly;
+    /* justify-content: space-around; */
     width:100%;
-    border: 2px solid black;
+    border: 6px groove rgb(129, 129, 192);
+    box-shadow: 5px 5px 10px gray;
     height: 12vh;
-    /* background-color: rgb(156, 209, 209); */
-    background-color: white;
     box-sizing: border-box;
+    font-size: 20px;
+    font-weight: bold;
+    background-color: aliceblue;
+    /* background-color: rgb(227, 235, 237); */
 }
 .parent2{
-    /* width: 50%; */
-    height: 70%;
+    /* height: 100%; */
     display: flex;
     flex-direction: row;
     list-style-type:none;
-    gap:1%;
+    /* border: 6px groove rgb(129, 129, 192); */
+    /* gap:%; */
     justify-content: center;
-    align-items: baseline;
-    /* border: 2px solid red; */
+    
+    /* align-items: baseline; */
 }
+.parent2 img{
+    height: 80%;
+    margin-top:5% ;
+    
+    /* border:2px solid blue; */
+  }
 .firstheading{
     font-size: 22px;
-    width: 10vw;
+    /* border: 2px solid green; */
+    height: 100%;
     display: flex;
-    
-    /* border:2px solid black; */
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    justify-content: center;
+    align-items: center;
+    font-family:'Times New Roman', Times, serif;
+    color:rgb(138, 56, 221)
+}
+.shop{
+   
+    color: rgb(34, 195, 198);
 }
 .linkParent{
     display: flex;
     flex-direction: row;
     list-style-type:none;
+    /* height: 50%; */
     gap:2vw;
+    /* border:2px solid red; */
+    justify-content: space-evenly;
+    align-items: center;
 }
 ul li .links{
     text-decoration-line: none;
-    font-size: 18px;
+    font-size: 20px;
+    text-transform: uppercase;
 }
 .links:hover{
     background-color: rgb(189, 129, 200);
 }
-.all_sub{
+.fashion-link {
     position: relative;
-    top:5vh;
-    background-color: lightgray;
+}
+.all_sub,.fashion_sub,.groceryitem_sub,.beautyproduct_sub,.electronics_sub{
+    position: absolute;
+    top:7%;
+    background-color:white;
+    list-style-type: none;
+    color:black;
+    text-align: center;
+    border:3px solid rgb(64, 108, 122);
+    line-height: 4vh;
+    /* width:8%; */
+  
     
 }
+/* .fashion_sub li,.groceryitem_sub li,.beautyproduct_sub li ,.elctronics-link li ,.fashion-link li , .all-link li{
+    border-bottom: 3px solid  gray;
+   
+} */
 .parent3{
     width: 100%;
     height: 10vh;
@@ -66,56 +95,249 @@ ul li .links{
 .searchbar{
     width:12vw;
     height: 3vh;
+    font-size: 13px;
+    background-color:rgb(226, 225, 225) ;
+    border:4px solid lightgray;
+}
+.responvivesearchbar{
+    display: none;
 }
 .iconsParent{
-    width:100%;
+    width:70%;
     display: flex;
-    justify-content: baseline;
+    justify-content: center;
     align-items: center;
     flex-direction: row;
     list-style-type:none;
     gap:2vw;
+    /* border: 2px solid blue; */
 }
 li i{
     font-size: 24px;
 }
-/* .slideShowimage{ 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height:60vh;
-    background-image: url('https://m.media-amazon.com/images/I/61+r3+JstZL._SL1500_.jpg'),linear-gradient(white,gray);
-    background-size: auto 50vh;
-    background-repeat: no-repeat;
-    background-position: center; */
-    /* animation: imgchange 6s ease-in-out 0s infinite forwards; */
-    /* background-color: rgb(148, 139, 139); */
-/* } */
-/* @keyframes imgchange {
-    0%{
-        background-color: black;
-        background-image: url('https://images-eu.ssl-images-amazon.com/images/G/31/img23/Wireless/CatPage/JUPITER/Phase3/Header/Header_1500x300_01.gif'),linear-gradient(white,gray);
-    }
-    20%{
-        background-color: black;
-        background-image: url('https://cdn.zeebiz.com/sites/default/files/styles/zeebiz_850x478/public/2022/09/15/200530-untitled-design-2022-09-15t174229297.jpg?itok=kfAdZhu4')
-        background-image:url('https://m.media-amazon.com/images/I/81SocKy8ghL._SL1500_.jpg'),linear-gradient(white,rgb(228, 230, 216)) ;
-    }
-    40%
-    {
-        background-color: black;
-        background-image: url('https://m.media-amazon.com/images/I/61EXU8BuGZL._SL1100_.jpg'),linear-gradient(white,rgb(228, 230, 216));
-    }
- 
-    100%{
-        background-color: rgb(231, 228, 93);
-        background-image: url('https://m.media-amazon.com/images/I/61uGyQfTscL._SL1001_.jpg'),linear-gradient(rgb(177, 173, 103),rgb(216, 225, 133));
-    }
-} 
+.login_logout{
+    display: block;
+}
+.iconsParent .login {
+    width:12vw;
+    border:4px solid white;
+    /* border:4px solid rgb(11, 55, 150); */
+    background-color: rgb(232, 236, 226);
+    font-size:20px;
+    font-weight:bold;
+    
+}
+.iconsParent .login .signup{
+    width:6vw;
+    border:3px solid white;
+    background-color:rgb(53, 95, 144);
+    font-weight: bold;
+    font-size: 20px;
 
-/* .slideimage{
+}
+
+.fa-solid{
+    display:block;
+    color: lightslategray;
+    margin-top:60%;
+
+}
+.navlinkres{
+    display:block;
+    width:100%;
+   
+}
+.listres{
+    display:block;
+   
+    border-bottom:4px solid lightcyan;
+    text-align: center;
+    background-color: rgb(139, 157, 163)
+}
+.listres .navlinkRes{
+    background-color: rgb(139, 157, 163);
+    color:white;
+}
+/* Style for the mobile menu icon */
+.display {
+    cursor: pointer;
+    display:none;
+    /* align-items: center; */
+
+  }
+  .navbar-listResponsive {
+    display: none;
+  }  
+
+
+@media screen and (min-width:300px) and (max-width:667px){
+   .iconsParent{
+        display:flex;
+        flex-direction: row;
+        width:100%;
+   }
+ 
+    .linkParent{
+        display: none;
+    }
+    .links{
+        display:none;
+    }
+    .navbar-listResponsive {
+        display: block;
+        position: absolute;
+        top: 60px; /* Adjust as needed */
+        left: 0;
+        z-index: 1;
+        padding: 10px;
+        height: auto;
+        cursor:pointer;
+        display: block;
+        /* border: 1px solid #ccc; */
+    }
+    .display {
+        display: block;
+    }
+     /* Style for the mobile menu icon when active */
+     .hambergerlinksShows {
+        display: block;
+        cursor: pointer;
+        text-align: center;
+      }
+      .hambergerlinksHide {
+        display: none;
+      }
+      .fa-solid {
+        font-size: 35px;
+        display:block;  
+       
+    }
+    .fa-bars{
+       
+      cursor:pointer;
+    }
     
-    width: auto;
-    height:50vh;
+    .listres{
+        display: block;
+    }
+   
+    .navlinkRes{
+        color:black;
+        background-color:rgb(255, 255, 255); 
+        text-decoration: none;
+        font-size: 22px;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+      }
+     
+      .parent2 img{
+        display:none;
+      }
+      /* menu icon */
+      .display {
+        cursor: pointer;
+        height: 100%;
+        /* border:2px solid red; */
+        display: block;
+        justify-content: space-around;
+        /* align-items: center; */
+      }
+      .login_logout{
+        display: none;
+        }
+}
+@media screen and (min-width:668px) and (max-width:1180px)
+{
+    .iconsParent{
+        display:flex;
+        flex-direction: row;
+        width:100%;
+        font-size: 30px;
+        
+   }
+
+    .linkParent{
+        display: none;
+    }
+    .links{
+        display:none;
+    }
+    .navbar-listResponsive {
+        display: block;
+        position: absolute;
+        top: 90px;
+        left: 0;
+        z-index: 1;
+        padding: 20px;
+        height: auto;
+        cursor:pointer;
+        display: block;
+    }
+    .display {
+        display: block;
+    }
+     /* Style for the mobile menu icon when active */
+     .hambergerlinksShows {
+        display: block;
+        cursor: pointer;
+        text-align: center;
+      }
+      .hambergerlinksHide {
+        display: none;
+      }
+      .fa-solid {
+        font-size: 35px;
+        display:block;  
+    }
+    .fa-bars{
+      cursor:pointer;
+    }
+    .listres{
+        display: block;
+    }
+    .navlinkRes{
+        color:black;
+        background-color:rgb(255, 255, 255);
+        
+        text-decoration: none;
+        font-size: 22px;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+    }
+   
+      .parent2{
+        /* border:2px solid blue; */
+        height: 100%;
+      }
+      .parent2 img{
+        height: 40%;
+        margin-top:5% ;
+        
+        /* border:2px solid blue; */
+      }
+      .login_logout{
+        display: none;
+        }
+      .parent3{
+        display: flex;
+        justify-items: center;
+        align-items: center;
+        width: 50%;
+        /* border:2px solid green;  */
+      }
+
+      .display {
+        cursor: pointer;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /* border:2px solid red; */
     
-} */
+      }
+      .firstheading {
+        font-size: 42px;
+        /* height:2vh; */
+        display: flex;
+        
+        
+      }
+}

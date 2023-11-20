@@ -1,14 +1,19 @@
 import React,{useState,useEffect} from 'react'
-import axios from "axios";
-import "../Style/Beauty.css"
+import "../Style/Electronics.css";
 import { NavLink ,Outlet} from 'react-router-dom';
+import AddFooter from "./Footer";
+import {useDispatch} from "react-redux";
+import {addtoCart} from "../Redux/Slice"
+
 const Electronics = () => {
   const [elect,setElect] = useState([])
+  const dispatch = useDispatch();
+  
 
     useEffect(()=>{
  
         async function apiFun(){
-          const fetchdata = await fetch("http://localhost:5005/api/electronics")
+          const fetchdata = await fetch("https://new-ecommerce-backend-m62a.onrender.com/api/getdatafromproductstore")
           const res = await fetchdata.json();
           console.log(res);
           setElect(res);
@@ -18,41 +23,56 @@ const Electronics = () => {
 
     return (
       <>
-        <div className='superContainer'>
-            <div className='Sub-route-Container'>
+        <div className='electronicssuperContainer'>
+            <div className='electronics-Sub-route-Container'>
               <ul>
-                <li><NavLink to="/api/electronics/Mobile">Moblie & accessories</NavLink></li>
-                <li><NavLink to="/api/electronics/tv&applicance">Tv & Home Applicance</NavLink></li>
-                <li><NavLink to="/api/electronics/laptop">Laptop</NavLink></li>
+                <li><NavLink to="/electronics/iphone">Iphone</NavLink></li>
+                <li><NavLink to="/electronics/laptop">Laptop</NavLink></li>
+                <li><NavLink to="/electronics/watch">Watch</NavLink></li>
               </ul>
+             
             </div>
-           <div className="beautycart-wrapper">
-            {elect.map((item)=>{
+            <div className='advertisment'>
+           
+                {/* <iframe src="https://giphy.com/embed/l2QE73aOjxO1fkd6E"  className='advertismentiframe'></iframe> */}
+            </div>
+            
+           <div className="electronicscart-wrapper">
+            {elect.filter((item)=>item.category==="electronics").map((item,index)=>{
+               const {
+                id = item.id,
+                image = item.image,
+                price= parseInt(item.price),
+                // Brand = item.Number_of_Items
+              }= item;
                 return (
-                    <div className="beautyimg-wrapper item" key={item.id}>
+                    <div className="electronicsimg-wrapper item" key={index}>
                       <NavLink to={`/moreDetails/${item.id}`}>
                       <img src={item.image} alt="Not Found"/>
                       </NavLink>
                        <br/>
-                    <div className="beautytext-wrapper item">
+                    <div className="electronicstext-wrapper item">
                         <span className='Brand'>
-                           {item.company_name}
+                           {/* {item.Number_of_Items} */}
                         </span>
-                        {/* <br/> */}
-                        <span>
-                          {item.product_name}
+                       
+                        <span className='ProductName'>
+                          {item.product_name.slice(0,19)}
                         </span>
-                        {/* <br/> */}
+                        
                         <span>
                           {item.product_Features}
                         </span>
-                        {/* <br/> */}
-                        <span>
+                        
+                        <span className='Price'>
                            Rs.{item.price}
                         </span>
-                        <div className="beautybtn-wrapper item ">
-                          <button onClick={()=>{}} className='addtocartbtn'>Add To Cart</button>
-                          <button onClick={()=>{}} className='removeitembtn'>Remove item </button>
+                      
+                        <div className="electronicsbtn-wrapper item ">
+                        <NavLink to={`/addtocart/${item.id}`}>
+                          <button onClick={()=>dispatch(addtoCart({id,image,price}))} className='electronicsaddtocartbtn'>Add To Cart </button>
+                        </NavLink>  
+                          <button onClick={()=>{}} className='electronicsremoveitembtn'>Remove item </button>
                         </div>
                     </div>
                    
@@ -62,6 +82,7 @@ const Electronics = () => {
             </div>
         </div>
         <Outlet/>
+        <AddFooter/>
        </>
       )
  

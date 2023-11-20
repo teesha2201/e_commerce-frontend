@@ -1,0 +1,188 @@
+
+.content-cart-parent{
+    /* border:2px solid navy; */
+    margin-top: 2%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.headcart{
+    display:flex;
+    flex-direction: row;
+    justify-content:center;
+    align-items: center;
+    width:24%;
+    color:gray;
+}
+.content-cart{
+    display:flex;
+    flex-direction: row;
+    justify-content:left;
+    align-items: center;
+    border-radius: 1%;
+    width:60vw;
+    margin-top: 2%;
+    background-color: rgb(238, 241, 244);
+    box-shadow: 5px 5px 10px gray;
+    border:10px solid white;
+    
+}
+.left_div{
+   
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items:center;
+   column-gap: 5vh;
+}
+.img-div{
+    width:24vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items:center;
+}
+.img-div img{
+    width:40%;
+    border: 12px solid rgb(226, 232, 234);
+}
+.add_sub_parent_div{
+    /* border:2px solid black; */
+    width:20vw;
+    display: flex;
+    flex-direction:row;
+    justify-content: space-around;
+    align-items:center;
+}
+.quantity-btn{
+    font-size: 30px;
+    width:20%;
+    border-radius: 55%;
+    background-color: rgb(179, 193, 197);
+}
+.quantity{
+
+   font-weight: bold;
+   font-size: 20px;
+}
+.right_div{
+    /* border:2px solid blue; */
+    width:40%;
+   line-height: 6vh;
+    display: flex;
+    flex-direction: column;
+    color:gray;
+   
+}
+.remove-cart{
+    font-size:14px;
+    width:30%;
+    border:3px solid rgb(153, 190, 202);
+    background-color: rgb(178, 201, 209);
+}
+.remove-cart:hover{
+    background-color: aliceblue;
+}
+.parent_total_buy{
+    margin-top: 1%;
+    /* border:2px solid green; */
+    text-align: right;
+    width:44%;
+    line-height: 5vh;
+}
+.buy button{
+   
+    font-size:18px;
+    color:lavenderblush;
+    width:44%;
+    line-height: 6vh;
+    border:2px solid rgb(62, 103, 117);
+    background-color: rgb(100, 125, 125);
+}
+.buy button:hover{
+  
+    background-color: rgb(87, 233, 236);
+}
+@media screen and (min-width:300px) and (max-width:667px){
+    .headcart{
+        width:50%
+    }
+    .content-cart{
+        width: 100vw;
+    }
+    .img-div img{
+        width:90%;
+        border: 12px solid rgb(226, 232, 234);
+        /* border: 2px solid lightcoral; */
+    }
+    .quantity-btn{
+        width:30%;
+        font-size: 14px;
+    }
+    .right_div{
+        width:50%;
+    }
+    .right_div h2,  .right_div .cartprice{
+        font-size: 14px;
+    }
+    .remove-cart{
+        width:50%;
+        font-size:12px;
+    }
+    .parent_total_buy{
+        width:90%;
+        font-size: 12px;
+
+    }
+    .buy button{
+        width:60%;
+        line-height: 3vh;
+    }
+    .buy button:hover{
+  
+        background-color: rgb(87, 233, 236);
+    }
+}
+@media screen and (min-width:668px) and (max-width:1180px)
+{
+    .headcart{
+        width:50%
+    }
+    .content-cart{
+        width: 100vw;
+    }
+    .img-div img{
+        width:100%;
+        border: 12px solid white;
+        /* border: 2px solid lightcoral; */
+    }
+    .quantity-btn{
+        width:20%;
+        font-size: 16px;
+    }
+    .right_div{
+        width:40%;
+    }
+    .right_div h2,  .right_div .cartprice{
+        font-size: 20px;
+    }
+    .remove-cart{
+        width:50%;
+        font-size:20px;
+    }
+    .parent_total_buy{
+        width:90%;
+        font-size: 20px;
+
+    }
+    .buy button{
+        width:50%;
+        line-height: 5vh;
+        font-size: 24px;
+    }
+    .buy button:hover{
+  
+        background-color: rgb(87, 233, 236);
+    }
+}

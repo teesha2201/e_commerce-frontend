@@ -1,14 +1,16 @@
 import React,{useState,useEffect} from 'react'
-import axios from "axios";
 import "../Style/Beauty.css"
 import { NavLink ,Outlet} from 'react-router-dom';
+import AddFooter from './Footer';
+import {useDispatch} from "react-redux";
+import {addtoCart} from "../Redux/Slice"
 
 const BeautyProduct = () => {
     const [beauty,setBeauty] = useState([])
-    
+    const dispatch = useDispatch();
     useEffect(()=>{
         async function apiFun(){
-          const fetchdata = await fetch("http://localhost:5005/api/beautyproduct")
+          const fetchdata = await fetch("https://new-ecommerce-backend-m62a.onrender.com/api/getdatafromproductstore")
           const res = await fetchdata.json();
           console.log(res);
           setBeauty(res);
@@ -18,41 +20,43 @@ const BeautyProduct = () => {
 
   return (
     <>
-    <div className='superContainer'>
-        <div className='Sub-route-Container'>
+    <div className='beautysuperContainer'>
+        <div className='beauty-Sub-route-Container'>
           <ul>
             <li><NavLink to="/beautyproduct/mac">Mac Product</NavLink></li>
             <li><NavLink to="/beautyproduct/swissBeauty">Swiss Beauty</NavLink></li>
-            <li><NavLink to="/beautyproduct/skinCare">SkinCare & accessories</NavLink></li>
+           
           </ul>
         </div>
        <div className="beautycart-wrapper">
-        {beauty.map((item)=>{
+        {beauty.filter((item)=>item.category==="beautyProduct").map((item,index)=>{
+            const {
+              id = item.id,
+              image = item.image,
+              price= parseInt(item.price),
+              // Brand = item.Number_of_Items
+            }= item;
             return (
-                <div className="beautyimg-wrapper item" key={item.id}>
+                <div className="beautyimg-wrapper item" key={index}>
                   <NavLink to={`/moreDetails/${item.id}`}>
                   <img src={item.image} alt="Not Found" className='beautyimg'/>
                   </NavLink>
                    <br/>
                 <div className="beautytext-wrapper item">
                     <span className='Brand'>
-                       {item.company_name}
+                     
+                    </span>   
+                    <span className='ProductName'>
+                        {item.product_name.slice(0,18)}
                     </span>
-                    {/* <br/> */}
-                    <span>
-                      {item.product_name.slice(0,50)}
-                    </span>
-                    {/* <br/> */}
-                    <span>
-                      {item.product_details[1].slice(0,30)}
-                    </span>
-                    {/* <br/> */}
-                    <span>
+                    <h3>
                        Rs.{item.price}
-                    </span>
+                    </h3>
                     <div className="beautybtn-wrapper item ">
-                      <button onClick={()=>{}} className='addtocartbtn'>Add To Cart</button>
-                      <button onClick={()=>{}} className='removeitembtn'>Remove item </button>
+                      <NavLink to={`/addtocart/${item.id}`}>
+                      <button onClick={()=>dispatch(addtoCart({id,image,price}))} className='beautyaddtocartbtn'>Add To Cart</button>
+                      </NavLink>
+                      <button onClick={()=>{}} className='beautyremoveitembtn'>Remove item </button>
                     </div>
                 </div>
                
@@ -62,6 +66,7 @@ const BeautyProduct = () => {
         </div>
     </div>
     <Outlet/>
+    <AddFooter/>
     </>
   )
 }
