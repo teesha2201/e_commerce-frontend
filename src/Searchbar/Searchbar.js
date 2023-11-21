@@ -5,12 +5,11 @@ import "./Searchbar.css"
 const Searchbar = ()=>{
     return(
         <>
-            <form>
-                <div>
-                <input type="text" placeholder="search here..." className="searchBar" 
-                //    value={}     
-                />
-                </div>
+                <form>
+            
+                <input type="text" placeholder="search items here..." className="searchBar" value={search} onChange={handleChange}/>
+                <button  className="searchbarButton">🔎</button>
+
             </form>
             
         </>
