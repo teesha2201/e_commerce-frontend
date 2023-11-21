@@ -223,11 +223,11 @@ const Navbar = () => {
           <Route path="/register" element={<RegisterNew/>}/>
         
           
-          <Route element={<PrivateComponent/>}>
+         
 
           <Route path="/home" element={<Home />} />
     
-
+         <Route element={<PrivateComponent/>}>
           <Route path="/all" element={<All />} />
           <Route path="/all/titanWatch" element={<TitanWatch />} />
           <Route path="/all/snacks" element={<Snacks />} />
