@@ -199,11 +199,9 @@ const Navbar = () => {
 
             <div className='parent3'>
               <ul className='iconsParent'>
-                <li></li>
+                
                   <Searchbar></Searchbar>
-                <li>  
-                  <input type="submit" value='search'/>
-                </li>
+                
                 <li style={{color:"blue" ,width:"20%"}}>🛒
                 <span>{countItem.length}</span>
                 </li>
