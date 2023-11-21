@@ -38,7 +38,7 @@ const Navbar = () => {
   const navigate = useNavigate()
   const logout = ()=>{
     console.log("Logout")
-    // localStorage.clear();
+    localStorage.clear();
     navigate('/register');
   }
 
