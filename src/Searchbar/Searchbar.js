@@ -7,7 +7,7 @@ const Searchbar = ()=>{
         <>
                 <form>
             
-                <input type="text" placeholder="search items here..." className="searchBar" value={search} onChange={handleChange}/>
+                <input type="text" placeholder="search items here..." className="searchBar" />
                 <button  className="searchbarButton">🔎</button>
 
             </form>
