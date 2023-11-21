@@ -1,19 +1,33 @@
 .searchBar{
-    width:60%;
+    
+    width:80%;
+    border:2px solid gray;
+    margin-left:5%;
+}
+ .searchbarButton{
+    background-color:gray ;
+    font-size:56%;
     border:2px solid gray;
 }
 @media screen and (min-width:300px) and (max-width:667px){
     .searchBar{
-        width:50%;
-     
-       
+        width:68%;     
+    }
+    .searchbarButton{
+        background-color:gray ;
+        font-size:52%;
+        border:3px solid gray;
     }
 }
-@media screen and (min-width:668px) and (max-width:1080px){
+@media screen and (min-width:668px) and (max-width:1180px){
     .searchBar{
-        width:50%;
-       
+        width:70%;
         font-size: 24px;
 
+    }
+    .searchbarButton{
+        background-color:gray ;
+        font-size:20px;
+        border:3px solid gray;
     }
 }
