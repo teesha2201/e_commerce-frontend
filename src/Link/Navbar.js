@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react'
 import { useSelector } from 'react-redux';
 import Error from "../Component/Error";
@@ -28,7 +29,7 @@ import RegisterNew from "../Login/Registernew"
 import './Navbar.css';
 import Searchbar from '../Searchbar/Searchbar';
 import PrivateComponent from '../Login/PrivateComponent';
-
+// import SearchProduct from '../Searchbar/SearchProduct'
 
 
 
@@ -38,7 +39,7 @@ const Navbar = () => {
   const navigate = useNavigate()
   const logout = ()=>{
     console.log("Logout")
-    localStorage.clear();
+    localStorage.clear(auth);
     navigate('/register');
   }
 
@@ -95,7 +96,7 @@ const Navbar = () => {
 
               <li className="list">
                 <div onDoubleClick={toggleHomeMenu} className='home-link'>
-                  <NavLink to="/home" className="links" style={({isActive})=>({color: isActive ? "aqua":"Navy"})}>HOME</NavLink>
+                  <NavLink to="/" className="links" style={({isActive})=>({color: isActive ? "aqua":"Navy"})}>HOME</NavLink>
                 </div>
               </li>
 
@@ -196,38 +197,39 @@ const Navbar = () => {
               </li>
 
           </ul>
-
+        
             <div className='parent3'>
               <ul className='iconsParent'>
-                
-                  <Searchbar></Searchbar>
-                
-                <li style={{color:"blue" ,width:"20%"}}>🛒
+                 <li>
+                  <NavLink to='/searchbar'>🔎</NavLink>
+                 </li>
+                <li style={{color:"blue" ,width:"25%"}}>🛒
                 <span>{countItem.length}</span>
                 </li>
-                {/* <li><i class="fa-regular fa-heart"></i></li> */}
-                <li className='login_logout'>{auth ? <NavLink onClick={logout} to="/register">Logout</NavLink>:
+                <li className='login_logout'> {auth ? <NavLink onClick={logout} to="/register">Logout</NavLink>:
                 <NavLink to="/">Login</NavLink>
                 }
-                </li> 
+                </li>
+                {/* <li>
+                <i class="fa-regular fa-user"></i>
+                </li>  */}
                
               </ul>
             </div>
             
           {/* </nav> */}
         </div>
-
+        {/* <Searchbar></Searchbar> */}
         <Routes>
 
-          <Route path="/" element={<LoginNew/>}/>
-          <Route path="/register" element={<RegisterNew/>}/>
+        
         
           
-         
+          {/* <Route element={<PrivateComponent/>}> */}
 
-          <Route path="/home" element={<Home />} />
+          <Route path="/" element={<Home />} />
     
-         <Route element={<PrivateComponent/>}>
+          <Route element={<PrivateComponent/>}>
           <Route path="/all" element={<All />} />
           <Route path="/all/titanWatch" element={<TitanWatch />} />
           <Route path="/all/snacks" element={<Snacks />} />
@@ -259,7 +261,13 @@ const Navbar = () => {
           <Route path="/addtocart/:id" element={<AddtoCart />} />
           
           <Route path="*" element={<Error />} />
+          
+          {/* <Route path="/search" element={<SearchProduct/>}/> */}
+          <Route path='/searchbar' element={<Searchbar/>}/>
+
           </Route>
+          <Route path="/login" element={<LoginNew/>}/>
+          <Route path="/register" element={<RegisterNew/>}/>
         </Routes>
         
 
@@ -270,11 +278,11 @@ const Navbar = () => {
                 <li className='listres'>{auth ? 
                 <NavLink onClick={() => {setCount(!count) ;logout()}} to="/register" className="navlinkRes" style={({isActive})=>({color: isActive ? "aqua":"Navy"})}>
                       Logout
-                  </NavLink>:<NavLink  onClick={() => setCount(!count)} to="/" className="navlinkRes" style={({isActive})=>({color: isActive ? "aqua":"Navy"})}>Login</NavLink>}
+                  </NavLink>:<NavLink  onClick={() => setCount(!count)} to="/login" className="navlinkRes" style={({isActive})=>({color: isActive ? "aqua":"Navy"})}>Login</NavLink>}
                 
                 </li>
                 <li className="listres">
-                  <NavLink onClick={() => setCount(!count)} to="/home" className="navlinkRes" style={({isActive})=>({color: isActive ? "aqua":"Navy"})}>
+                  <NavLink onClick={() => setCount(!count)} to="/" className="navlinkRes" style={({isActive})=>({color: isActive ? "aqua":"Navy"})}>
                       Home
                   </NavLink>
                 </li>
@@ -304,48 +312,10 @@ const Navbar = () => {
                  
                 </li>  
               </ul>
-        </div>      
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-   
+        </div>     
     </>
   )
 }
 
 export default Navbar
+
