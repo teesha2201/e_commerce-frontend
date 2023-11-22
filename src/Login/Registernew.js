@@ -62,7 +62,7 @@ function RegisterNew() {
       alert("password field must have min 6 and max 12 characters long");
       navi('/register')
        
-      if(data.phoneNo.length<=0 || data.phoneNo.length>=11){
+      if(data.phoneNo.length<=0 || data.phoneNo.length>11){
         alert("phoneNo. must have 10characters long");
         navi('/register')
       }
@@ -87,7 +87,7 @@ function RegisterNew() {
             }
           else if(res.data.token){
             
-            navi("/");
+            navi("/login");
           }
         
         })
@@ -132,7 +132,7 @@ function RegisterNew() {
         <br/>
         <div className="or">If Already have an Account </div>
         <br/>
-        <NavLink to="/" className="nextpage">
+        <NavLink to="/login" className="nextpage">
           Go To Login Page
         </NavLink>
         <br/>

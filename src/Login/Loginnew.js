@@ -25,9 +25,9 @@ function LoginNew() {
         localStorage.getItem("name",res.data.name);
         if(res.data.msg==="email wrong"){
           alert(res.data.msg)
-          navigate('/');
+          navigate('/login');
         }
-        navigate("/home");
+        navigate("/");
       })
       .catch((error) => {
         console.error("Error:", error);
