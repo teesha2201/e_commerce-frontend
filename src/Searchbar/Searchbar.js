@@ -18,7 +18,7 @@ const Searchbar = ()=>{
 
     const handleSumbit = async () =>{
         
-            const response = await fetch(`http://localhost:5005/api/search/${search}`,)
+            const response = await fetch(`https://new-ecommerce-backend-m62a.onrender.com/api/search/${search}`,)
             const data = await response.json();
             setSearchresult(data);
             // navigate("/search");
