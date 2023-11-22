@@ -16,7 +16,7 @@ function LoginNew() {
   const navigate = useNavigate();
   const handleSubmit = (e) => {
     e.preventDefault();
-    axios.post("http://localhost:5005/api/login", data,{headers:{"authorization":`Bearer${token}`}})
+    axios.post("https://new-ecommerce-backend-m62a.onrender.com/api/login", data,{headers:{"authorization":`Bearer${token}`}})
     .then((res) => {
         alert(res.data.msg);
         setData(res.data);

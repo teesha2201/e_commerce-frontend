@@ -74,7 +74,7 @@ function RegisterNew() {
     }
    
     await axios
-        .post("http://localhost:5005/api/register", data)
+        .post("https://new-ecommerce-backend-m62a.onrender.com/api/register", data)
         .then((res) => {
           alert(res.data.msg);
           setData(res.data);
