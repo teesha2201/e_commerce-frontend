@@ -1,3 +1,4 @@
+
 import React,{useState,useEffect} from 'react'
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
@@ -7,7 +8,10 @@ import AddFooter from '../Component/Footer';
 import axios from "axios";
 const Home = () => {
   const [home,setHome] = useState([])
-  const token = localStorage.getItem('token')
+  // const token = localStorage.getItem('token')
+
+
+ 
     useEffect(()=>{
 
       // async function apiFun(){
@@ -18,15 +22,8 @@ const Home = () => {
             // localStorage.getItem("token",res.data.token);
             // localStorage.getItem("name",res.data.name);
       
-      },[token])
-        // if(token)
-        // {
-          // apiFun();
-        // }
-        
-        
-        
-    //  })
+      },[])
+       
 
   return (
     <>

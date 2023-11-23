@@ -1,3 +1,4 @@
+
 import React,{useEffect,useState} from 'react'
 import { Outlet,NavLink } from 'react-router-dom';
 import "../Style/All.css"
@@ -59,7 +60,7 @@ const All = () => {
                       <NavLink to={`/addtocart/${item.id}`}>
                         <button onClick={()=>dispatch(addtoCart({id,image,price}))} className='alladdtocartbtn'>Add To Cart</button>
                       </NavLink>  
-                      <button onClick={()=>{}} className='.allremoveitembtn'>Remove item </button>
+                      <button onClick={()=>{}} className='allremoveitembtn'>Buy Now </button>
                     </div>
                 </div>
                

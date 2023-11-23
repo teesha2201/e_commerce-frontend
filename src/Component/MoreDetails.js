@@ -1,3 +1,4 @@
+
 import React,{useState,useEffect} from "react";
 import { useParams ,useNavigate,NavLink} from "react-router-dom";
 import axios from "axios";
@@ -46,7 +47,7 @@ function MoreDetails(){
                                 </ul>
                                 
                                 <div className="moredetailsButtonParent">
-                                    <button onClick={()=>navigate(-1)} className="goBackbtn">Go back</button>
+                                    <button onClick={()=>navigate(-1)} className="goBackbtn">Buy Now </button>
                                     <NavLink to={`/addtocart/${item.id}`}>
                                         <button onClick={()=>dispatch(addtoCart({id,image,price}))} className='fashionaddtocartbtn'>Add To Cart</button> 
                                     </NavLink>
@@ -63,4 +64,5 @@ function MoreDetails(){
         </>
     )
 }
+
 export default MoreDetails

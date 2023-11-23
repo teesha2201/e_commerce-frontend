@@ -1,3 +1,4 @@
+
 import React from 'react'
 import "../Style/Footer.css"
 import {Link} from "react-router-dom"
@@ -52,14 +53,3 @@ function AddFooter()
     )
 }
 export default AddFooter
-// import React from "react";
-
-// function Footer(){
-//     return(
-//         <footer className="superFooterContainer">
-
-
-//         </footer>
-//     )
-// }
-// export default Footer

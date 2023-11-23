@@ -47,7 +47,7 @@ function Dynamicpage(){
                                 </ul>
                                 
                                 <div className="dynamicButtonParent">
-                                    <button onClick={()=>navigate(-1)} className="goBackbtn">Go back</button>
+                                    <button onClick={()=>navigate(-1)} className="goBackbtn"> Back</button>
                                     <NavLink to={`/addtocart/${item.id}`}>
                                         <button onClick={()=>dispatch(addtoCart({id,image,price}))} className='fashionaddtocartbtn'>Add To Cart</button> 
                                     </NavLink>

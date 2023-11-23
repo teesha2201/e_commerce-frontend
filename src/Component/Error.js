@@ -1,3 +1,4 @@
+
 import React from "react";
 
 import AddFooter from "../Component/Footer";
@@ -9,4 +10,6 @@ function Error() {
         </>
     )
 }
+
+
 export default Error

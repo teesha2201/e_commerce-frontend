@@ -1,3 +1,4 @@
+
 import React,{useState,useEffect} from 'react'
 // import axios from "axios";
 import "../Style/Grocery.css"
@@ -60,7 +61,7 @@ const Grocery = () => {
                     <NavLink to={`/addtocart/${item.id}`}>  
                       <button onClick={()=>dispatch(addtoCart({id,image,price}))} className='groceryaddtocartbtn'>Add To Cart</button>
                     </NavLink>  
-                      <button onClick={()=>{}} className='groceryremoveitembtn'>Remove item </button>
+                      <button onClick={()=>{}} className='groceryremoveitembtn'>Buy Now </button>
                     </div>
                 </div>
                

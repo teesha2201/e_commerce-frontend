@@ -1,3 +1,4 @@
+
 import React,{useState,useEffect} from 'react'
 import "../Style/Beauty.css"
 import { NavLink ,Outlet} from 'react-router-dom';
@@ -39,12 +40,12 @@ const BeautyProduct = () => {
             return (
                 <div className="beautyimg-wrapper item" key={index}>
                   <NavLink to={`/moreDetails/${item.id}`}>
-                  <img src={item.image} alt="Not Found" className='beautyimg'/>
+                    <img src={item.image} alt="Not Found" className='beautyimg'/>
                   </NavLink>
                    <br/>
                 <div className="beautytext-wrapper item">
                     <span className='Brand'>
-                     
+                  
                     </span>   
                     <span className='ProductName'>
                         {item.product_name.slice(0,18)}
@@ -56,7 +57,7 @@ const BeautyProduct = () => {
                       <NavLink to={`/addtocart/${item.id}`}>
                       <button onClick={()=>dispatch(addtoCart({id,image,price}))} className='beautyaddtocartbtn'>Add To Cart</button>
                       </NavLink>
-                      <button onClick={()=>{}} className='beautyremoveitembtn'>Remove item </button>
+                      <button onClick={()=>{}} className='beautyremoveitembtn'>Buy Now </button>
                     </div>
                 </div>
                
