@@ -41,7 +41,7 @@ const Titan = ()=>{
                         <NavLink to={`/addtoCart/${item.id}`}>
                           <button onClick={()=>{}} className='laptopaddtocartbtn'>Add To Cart</button>
                         </NavLink>  
-                          <button onClick={()=>{}} className='laptopremoveitembtn'>Remove item </button>
+                          <button onClick={()=>{}} className='laptopremoveitembtn'>Buy Now </button>
                         </div>
                     </div>
                    
