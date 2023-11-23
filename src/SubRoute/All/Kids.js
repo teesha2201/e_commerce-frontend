@@ -50,7 +50,7 @@ const KidsWear = () => {
                         <NavLink to={`/addtocart/${item.id}`}>
                           <button onClick={()=>dispatch(addtoCart({id,image,price}))} className='laptopaddtocartbtn'>Add To Cart</button>
                         </NavLink>  
-                          <button onClick={()=>{}} className='laptopremoveitembtn'>Remove item </button>
+                          <button onClick={()=>{}} className='laptopremoveitembtn'>Buy Now  </button>
                         </div>
                     </div>
                    
