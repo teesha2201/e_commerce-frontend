@@ -203,8 +203,8 @@ const Navbar = () => {
                  <li>
                   <NavLink to='/searchbar'>🔎</NavLink>
                  </li>
-                <li style={{color:"blue" ,width:"25%"}}>🛒
-                <span>{countItem.length}</span>
+                  <li style={{color:"blue" ,width:"25%",cursor:"pointer"}} onClick={()=>navigate("/addtocart/:id")}>🛒
+                  <span>{countItem.length}</span>
                 </li>
                 <li className='login_logout'> {auth ? <NavLink onClick={logout} to="/register">Logout</NavLink>:
                 <NavLink to="/">Login</NavLink>
