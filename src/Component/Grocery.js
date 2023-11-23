@@ -61,7 +61,7 @@ const Grocery = () => {
                     <NavLink to={`/addtocart/${item.id}`}>  
                       <button onClick={()=>dispatch(addtoCart({id,image,price}))} className='groceryaddtocartbtn'>Add To Cart</button>
                     </NavLink>  
-                      <button onClick={()=>{}} className='groceryremoveitembtn'>Buy Now </button>
+                      {/* <button onClick={()=>{}} className='groceryremoveitembtn'>Buy Now </button> */}
                     </div>
                 </div>
                

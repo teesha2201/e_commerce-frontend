@@ -1,29 +1,25 @@
 
 import React,{useState,useEffect} from 'react'
-import "../Style/Electronics.css";
-import { NavLink ,Outlet} from 'react-router-dom';
-import AddFooter from "./Footer";
-import {useDispatch} from "react-redux";
-import {addtoCart} from "../Redux/Slice"
+import { Outlet,NavLink } from 'react-router-dom'
+import AddFooter from './Footer'
 
-const Electronics = () => {
-  const [elect,setElect] = useState([])
-  const dispatch = useDispatch();
-  
-
-    useEffect(()=>{
+const Iphone = () => {
+  const [iphone,setIphone] =useState([])
  
-        async function apiFun(){
-          const fetchdata = await fetch("https://new-ecommerce-backend-m62a.onrender.com/api/getdatafromproductstore")
-          const res = await fetchdata.json();
-          console.log(res);
-          setElect(res);
-           }
-           apiFun();
-       },[])
+    useEffect(()=>{
+      async function apiFun(){
+        const fetchdata = await fetch("https://new-ecommerce-backend-m62a.onrender.com/api/getdatafromproductstore")
+        const res = await fetchdata.json();
+        console.log(res);
+      
+        setIphone(res);
+         }
+         apiFun();
+     },[])
 
-    return (
-      <>
+    return(
+          
+            <>
         <div className='electronicssuperContainer'>
             <div className='electronics-Sub-route-Container'>
               <ul>
@@ -39,21 +35,16 @@ const Electronics = () => {
             </div>
             
            <div className="electronicscart-wrapper">
-            {elect.filter((item)=>item.category==="electronics").map((item,index)=>{
-               const {
-                id = item.id,
-                image = item.image,
-                price= parseInt(item.price),
-              }= item;
+            {iphone.filter((item)=>item.subCategory==="iphone").map((item)=>{
                 return (
-                    <div className="electronicsimg-wrapper item" key={index}>
+                    <div className="electronicsimg-wrapper item" key={item.id}>
                       <NavLink to={`/moreDetails/${item.id}`}>
                       <img src={item.image} alt="Not Found"/>
                       </NavLink>
                        <br/>
                     <div className="electronicstext-wrapper item">
                         <span className='Brand'>
-                           {/* {item.Number_of_Items} */}
+          
                         </span>
                        
                         <span className='ProductName'>
@@ -69,8 +60,8 @@ const Electronics = () => {
                         </span>
                       
                         <div className="electronicsbtn-wrapper item ">
-                        <NavLink to={`/addtocart/${item.id}`}>
-                          <button onClick={()=>dispatch(addtoCart({id,image,price}))} className='electronicsaddtocartbtn'>Add To Cart </button>
+                        <NavLink to={`/addtoCart/${item.id}`}>
+                          <button onClick={()=>{}} className='electronicsaddtocartbtn'>Add To Cart</button>
                         </NavLink>  
                           {/* <button onClick={()=>{}} className='electronicsremoveitembtn'>Buy Now</button> */}
                         </div>
@@ -84,8 +75,11 @@ const Electronics = () => {
         <Outlet/>
         <AddFooter/>
        </>
-      )
- 
+        
+        )
+          
+  
 }
 
-export default Electronics
+
+export default Iphone
