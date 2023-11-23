@@ -6,7 +6,7 @@ import { Routes, Route, NavLink, useNavigate} from "react-router-dom";
 import Electronics from '../Component/Electronics';
 import Home from '../Component/Home';
 import All from '../Component/All';
-import TitanWatch from '../SubRoute/TitanWatch';
+import Titan from '../Component/WatchTitan';
 import Fashion from '../Component/Fashion';
 import Men from '../Component/Mens';
 import Women from "../Component/Women";
@@ -246,7 +246,7 @@ const Navbar = () => {
     
         
           <Route path="/all" element={<All />} />
-          <Route path="/all/titanWatch" element={<TitanWatch />} />
+          <Route path="/all/titanWatch" element={<Titan />} />
           <Route path="/all/snacks" element={<Snacks />} />
           <Route path="/all/kids" element={<Kids />} />
 
