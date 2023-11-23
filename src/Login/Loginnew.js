@@ -21,12 +21,13 @@ function LoginNew() {
         alert(res.data.msg);
         setData(res.data);
         // localStorage.setItem("token", res.data.token);
-        localStorage.getItem("token",res.data.token);
-        localStorage.getItem("name",res.data.name);
+        localStorage.setItem("token",res.data.token);
+        // localStorage.getItem("name",res.data.name);
         if(res.data.msg==="email wrong"){
           alert(res.data.msg)
           navigate('/login');
         }
+        
         navigate("/");
       })
       .catch((error) => {
