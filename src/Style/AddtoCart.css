@@ -1,4 +1,5 @@
 
+
 .content-cart-parent{
     /* border:2px solid navy; */
     margin-top: 2%;
@@ -75,7 +76,11 @@
     color:gray;
    
 }
-.remove-cart{
+.cartbuttonParent{
+    display: flex;
+    justify-content: space-between;
+}
+.remove-cart {
     font-size:14px;
     width:30%;
     border:3px solid rgb(153, 190, 202);
@@ -83,6 +88,15 @@
 }
 .remove-cart:hover{
     background-color: aliceblue;
+}
+.backbtn{
+    font-size:14px;
+    width:30%;
+    border:3px solid rgb(125, 163, 176);
+    background-color: rgb(108, 148, 161);
+}
+.backbtn:hover{
+    background-color: rgb(200, 207, 213);
 }
 .parent_total_buy{
     margin-top: 1%;
@@ -184,5 +198,9 @@
     .buy button:hover{
   
         background-color: rgb(87, 233, 236);
+    }
+    .parentAddtoCart{
+    display:flex;
+    flex-direction: row;
     }
 }
