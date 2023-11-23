@@ -8,19 +8,19 @@ import Home from '../Component/Home';
 import All from '../Component/All';
 import TitanWatch from '../SubRoute/TitanWatch';
 import Fashion from '../Component/Fashion';
-import Men from '../SubRoute/Fashion/Mens';
-import Women from "../SubRoute/Fashion/Women";
-import Kids from '../SubRoute/Fashion/KidsWear';
+import Men from '../Component/Mens';
+import Women from "../Component/Women";
+import Kids from '../Component/KidsWear';
 import Grocery from '../Component/Grocery';
-import Snacks from '../SubRoute/Grocery/Snacks';
-import TeaCofeeBeverages from '../SubRoute/Grocery/TeaCoffee';
-import IndianRegularFood from "../SubRoute/Grocery/IndianRegularFood";
+import Snacks from '../Component/Snacks';
+import TeaCofeeBeverages from '../Component/TeaCoffee';
+import IndianRegularFood from "../Component/IndianRegularFood";
 import BeautyProduct from '../Component/BeautyProduct';
-import Mac from "../SubRoute/Beautyproduct/Mac";
-import SwissBeauty from "../SubRoute/Beautyproduct/SwissBeauty";
-import IPhone from '../SubRoute/Electronics/Iphone';
-import Laptop from "../SubRoute/Electronics/Laptop";
-import Watch from "../SubRoute/Electronics/Watch"
+import Mac from "../Component/Mac";
+import SwissBeauty from "../Component/SwissBeauty";
+import IPhone from '../Component/Iphone';
+import Laptop from "../Component/Laptop";
+import Watch from "../Component/Watch"
 import MoreDetails from "../Component/MoreDetails";
 import AddtoCart from '../Redux/Addtocart';
 import Dynamicpage from '../Component/Dynamicpage';
@@ -212,14 +212,7 @@ const Navbar = () => {
                 <li>
                 <i class="fa-regular fa-user" ></i>
                 </li>
-                {/* <li className='loginsignup_li'>
-                  <button className='loginbtn' >
-                    <NavLink to="/login">Login </NavLink>
-                  </button>
-                  <button className='signupbtn'>
-                  <NavLink to="/register">SignUp</NavLink>
-                  </button>
-                </li> */}
+              
                 <li style={{color:"navy"}} className='profile'>
                   <NavLink to='/register' >
                   
