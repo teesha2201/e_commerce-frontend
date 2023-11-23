@@ -1,3 +1,4 @@
+
 import React,{useState,useEffect} from 'react'
 import { Outlet,NavLink } from 'react-router-dom'
 import AddFooter from '../../Component/Footer'
@@ -62,7 +63,7 @@ const Iphone = () => {
                         <NavLink to={`/addtoCart/${item.id}`}>
                           <button onClick={()=>{}} className='electronicsaddtocartbtn'>Add To Cart</button>
                         </NavLink>  
-                          <button onClick={()=>{}} className='electronicsremoveitembtn'>Remove item </button>
+                          <button onClick={()=>{}} className='electronicsremoveitembtn'>Buy Now</button>
                         </div>
                     </div>
                    
@@ -79,5 +80,6 @@ const Iphone = () => {
           
   
 }
+
 
 export default Iphone

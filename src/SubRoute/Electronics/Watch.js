@@ -1,3 +1,4 @@
+
 import React,{useEffect,useState} from "react";
 import '../SubStyle/Laptop.css';
 import {Outlet,NavLink} from "react-router-dom";
@@ -41,7 +42,7 @@ const Watch = ()=>{
                         <NavLink to={`/addtoCart/${item.id}`}>
                           <button onClick={()=>{}} className='laptopaddtocartbtn'>Add To Cart</button>
                         </NavLink>  
-                          <button onClick={()=>{}} className='laptopremoveitembtn'>Remove item </button>
+                          <button onClick={()=>{}} className='laptopremoveitembtn'>Buy Now</button>
                         </div>
                     </div>
                    
@@ -56,4 +57,5 @@ const Watch = ()=>{
         </>
     )
 }
+
 export default Watch
