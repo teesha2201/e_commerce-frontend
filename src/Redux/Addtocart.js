@@ -4,11 +4,14 @@ import { RemoveItem, IncreaseQuantity, DecreaseQuantity } from "../Redux/Slice";
 import AddFooter from "../Component/Footer";
 import "../Style/AddtoCart.css"
 import { useNavigate } from "react-router-dom";
+import {loadStripe} from '@stripe/stripe-js';
+
 const AddtoCart = () => {
  const navigate= useNavigate()
   const dispatch = useDispatch();
 
   const data = useSelector((state) => state.Cart.cart);
+  console.log("Add to cart :",data);
 
   const total = data.reduce((acc, item) => {
     return acc + item.price * item.quantity;
@@ -21,6 +24,28 @@ const AddtoCart = () => {
     dispatch(DecreaseQuantity({ id }));
   };
 
+  //payment integration
+  const makePayment = async ()=>{
+    const stripe = await loadStripe("pk_test_51OFcxhSJ9imTpFOMrr7cLjkKItk8MT04D4U3l2L9diYzzh7XSJ4IGUgyk7EA1JjKzVm1gm51ePzgHGkXk3zaTweX00CcmdCw7g");
+    const body = {
+      products: data
+    }
+    const headers = {
+      "Content-Type":"application/json"
+    }
+    const response = await fetch("http://localhost:5005/api/create-checkout-session",{
+      method:"POST",
+      headers:headers,
+      body:JSON.stringify(body)
+    })
+    const session = await response.json();
+    const result  = stripe.redirectToCheckout({
+      sessionId:session.id
+    });
+    if(result.error){
+      console.log(result.error);
+    }
+  }
   return (
     <div>
       {/* <h2 className="headcart">Cart</h2> */}
@@ -36,7 +61,7 @@ const AddtoCart = () => {
                  
                   <div className="left_div">
                     <div className="img-div">
-                      <img src={item.image} alt="" />
+                      <img src={item.image} alt="Not Found" />
                     </div>
                     <div className="add_sub_parent_div">
                       <button
@@ -57,7 +82,7 @@ const AddtoCart = () => {
                   <div className="right_div">
                    
                     <h3>Item Quantity:{item.quantity}</h3>
-                    
+                    {/* <h3>{item.product_name}</h3> */}
                     <h3>Item Price: {item.price} Rs. </h3>
                     <h3 className="cartprice">
                      Total Items Price: {item.price * item.quantity + " Rs. " }
@@ -87,7 +112,7 @@ const AddtoCart = () => {
               {/* <h1 style={{ color: "black" }}>{total}</h1> */}
             </div>
             <div className="buy">
-              <button>Buy Now</button>
+              <button className="checkout" onClick={makePayment}>Checkout</button>
             </div>
             </div>
         
