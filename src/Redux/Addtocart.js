@@ -3,7 +3,9 @@ import { useSelector, useDispatch } from "react-redux";
 import { RemoveItem, IncreaseQuantity, DecreaseQuantity } from "../Redux/Slice";
 import AddFooter from "../Component/Footer";
 import "../Style/AddtoCart.css"
+import { useNavigate } from "react-router-dom";
 const AddtoCart = () => {
+ const navigate= useNavigate()
   const dispatch = useDispatch();
 
   const data = useSelector((state) => state.Cart.cart);
@@ -53,18 +55,25 @@ const AddtoCart = () => {
                     </div>
                   </div>
                   <div className="right_div">
-                    {/* <h2>Product Name: Iphone</h2> */}
+                   
                     <h3>Item Quantity:{item.quantity}</h3>
+                    
+                    <h3>Item Price: {item.price} Rs. </h3>
                     <h3 className="cartprice">
-                    Product Price: {"Rs " + item.price * item.quantity}
+                     Total Items Price: {item.price * item.quantity + " Rs. " }
                   </h3>
+                  <div className="cartbuttonParent">
                   <button
                       className="remove-cart"
                       onClick={() => dispatch(RemoveItem({ id: item.id }))}
                     >
                       Remove Item
                     </button>
-                    
+                   
+                    <button className="backbtn" onClick={()=>navigate(-1)}>
+                      Previous page
+                    </button>
+                  </div>
                   </div>
                  
                 </div>
