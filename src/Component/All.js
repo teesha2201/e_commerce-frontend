@@ -36,8 +36,10 @@ const All = () => {
               id = item.id,
               image = item.image,
               price= parseInt(item.price),
+              subCategory= item.subCategory
               // Brand = item.Number_of_Items
             }= item;
+            console.log(subCategory)
             return (
                 <div className="allimg-wrapper item" key={index}>
                   <NavLink to={`/moreDetails/${item.id}`}>
@@ -58,7 +60,7 @@ const All = () => {
                     </span>
                     <div className="allbtn-wrapper item ">
                       <NavLink to={`/addtocart/${item.id}`}>
-                        <button onClick={()=>dispatch(addtoCart({id,image,price}))} className='alladdtocartbtn'>Add To Cart</button>
+                        <button onClick={()=>dispatch(addtoCart({id,image,price,subCategory}))} className='alladdtocartbtn'>Add To Cart</button>
                       </NavLink>  
                       <button onClick={()=>{}} className='allremoveitembtn'>Buy Now </button>
                     </div>
