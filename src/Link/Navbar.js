@@ -2,7 +2,7 @@
 import React, { useState } from 'react'
 import { useSelector } from 'react-redux';
 import Error from "../Component/Error";
-import { Routes, Route, NavLink, useNavigate,useLocation} from "react-router-dom";
+import { Routes, Route, NavLink, useNavigate} from "react-router-dom";
 import Electronics from '../Component/Electronics';
 import Home from '../Component/Home';
 import All from '../Component/All';
