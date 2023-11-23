@@ -2,7 +2,7 @@
 import React, { useState } from 'react'
 import { useSelector } from 'react-redux';
 import Error from "../Component/Error";
-import { Routes, Route, NavLink, useNavigate } from "react-router-dom";
+import { Routes, Route, NavLink, useNavigate,useLocation} from "react-router-dom";
 import Electronics from '../Component/Electronics';
 import Home from '../Component/Home';
 import All from '../Component/All';
@@ -29,14 +29,16 @@ import RegisterNew from "../Login/Registernew"
 import './Navbar.css';
 import Searchbar from '../Searchbar/Searchbar';
 import PrivateComponent from '../Login/PrivateComponent';
-// import SearchProduct from '../Searchbar/SearchProduct'
+
 
 
 
 const Navbar = () => {
 
   const auth = localStorage.getItem('token')
-  const navigate = useNavigate()
+
+  const navigate = useNavigate();
+
   const logout = ()=>{
     console.log("Logout")
     localStorage.clear(auth);
@@ -52,7 +54,7 @@ const Navbar = () => {
 
   const [count, setCount] = useState(false);
   const countItem = useSelector((state) => state.Cart.cart);
-  
+
   const toggleHomeMenu = () => {
     setIsHomeData(!isHomeData);
   };
@@ -203,23 +205,34 @@ const Navbar = () => {
                  <li>
                   <NavLink to='/searchbar'>🔎</NavLink>
                  </li>
-                  <li style={{color:"blue" ,width:"25%",cursor:"pointer"}} onClick={()=>navigate("/addtocart/:id")}>🛒
+               
+                <li style={{color:"blue" ,width:"25%",cursor:"pointer"}} onClick={()=>navigate("/addtocart/:id")}>🛒
                   <span>{countItem.length}</span>
                 </li>
-                <li className='login_logout'> {auth ? <NavLink onClick={logout} to="/register">Logout</NavLink>:
-                <NavLink to="/">Login</NavLink>
-                }
+                
+                <li className='loginsignup_li'>
+                  <button className='loginbtn' >
+                    <NavLink to="/login">Login </NavLink>
+                  </button>
+                  <button className='signupbtn'>
+                  <NavLink to="/register">SignUp</NavLink>
+                  </button>
                 </li>
-                {/* <li>
-                <i class="fa-regular fa-user"></i>
-                </li>  */}
+                <li style={{color:"navy"}} className='profile'>
+                  <NavLink to='/register' >
+                  <i class="fa-regular fa-user" ></i>
+                    <span className='login_logout' > {auth ? <NavLink onClick={logout} to="/register">Logout</NavLink>:
+                      <NavLink to="/">Login</NavLink>
+                      }
+                     </span>
+                  </NavLink>
+                </li>
+              
                
               </ul>
             </div>
-            
-          {/* </nav> */}
         </div>
-        {/* <Searchbar></Searchbar> */}
+       
         <Routes>
 
         
