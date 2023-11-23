@@ -209,20 +209,29 @@ const Navbar = () => {
                 <li style={{color:"blue" ,width:"25%",cursor:"pointer"}} onClick={()=>navigate("/addtocart/:id")}>🛒
                   <span>{countItem.length}</span>
                 </li>
-                
-                <li className='loginsignup_li'>
+                <li>
+                <i class="fa-regular fa-user" ></i>
+                </li>
+                {/* <li className='loginsignup_li'>
                   <button className='loginbtn' >
                     <NavLink to="/login">Login </NavLink>
                   </button>
                   <button className='signupbtn'>
                   <NavLink to="/register">SignUp</NavLink>
                   </button>
-                </li>
+                </li> */}
                 <li style={{color:"navy"}} className='profile'>
                   <NavLink to='/register' >
-                  <i class="fa-regular fa-user" ></i>
-                    <span className='login_logout' > {auth ? <NavLink onClick={logout} to="/register">Logout</NavLink>:
-                      <NavLink to="/">Login</NavLink>
+                  
+                    <span className='login_logout' > {auth ? <NavLink onClick={logout} to="/login">Logout</NavLink>:
+                    <>
+                    <button className='loginbtn' >
+                    <NavLink to="/login">Login </NavLink>
+                  </button>
+                  <button className='signupbtn'>
+                  <NavLink to="/register">SignUp</NavLink>
+                  </button>
+                    </>
                       }
                      </span>
                   </NavLink>
@@ -238,11 +247,11 @@ const Navbar = () => {
         
         
           
-          {/* <Route element={<PrivateComponent/>}> */}
+      
 
           <Route path="/" element={<Home />} />
     
-          <Route element={<PrivateComponent/>}>
+        
           <Route path="/all" element={<All />} />
           <Route path="/all/titanWatch" element={<TitanWatch />} />
           <Route path="/all/snacks" element={<Snacks />} />
@@ -271,14 +280,15 @@ const Navbar = () => {
           {/* Dynamic Route try */}
           <Route path="/moreDetails/:id" element={<MoreDetails />} />
           <Route path="/moreDetail/:id" element={<Dynamicpage />} />
+            <Route element={<PrivateComponent/>}>
           <Route path="/addtocart/:id" element={<AddtoCart />} />
-          
+          </Route>
           <Route path="*" element={<Error />} />
           
           {/* <Route path="/search" element={<SearchProduct/>}/> */}
           <Route path='/searchbar' element={<Searchbar/>}/>
 
-          </Route>
+          
           <Route path="/login" element={<LoginNew/>}/>
           <Route path="/register" element={<RegisterNew/>}/>
         </Routes>
