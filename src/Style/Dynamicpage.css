@@ -3,16 +3,18 @@
     display:flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;   
+    align-items: center;  
+    /* border:2px solid black;  */
 }
 .dynamiccontainer{
+    width:50%;
    display: flex;
    flex-direction: row;
-   justify-content: space-evenly;  
+   justify-content: space-between;  
 }
 .dynamicimgparent{
     
-    height:70vh;
+    height:50vh;
     border: 20px solid white;
     display: flex;
     justify-content: space-around;
@@ -28,8 +30,9 @@
     height:70%
 }
 .dynamicDescripition{
-    width:34%; 
-
+    width:40%; 
+    /* border:2px solid blue; */
+    line-height: 6vh;
  
 }
 .dynamicDescripition ul li{ 
@@ -40,6 +43,10 @@
 .dynamicDescripition ul h2{
     color:rgb(14, 14, 100);
 }
+.dynamicDescripition ul li span{
+    font-size: 20px;
+    font-weight: bold;
+}
 .dynamicButtonParent{
     display: flex;
     flex-direction:row; 
@@ -48,16 +55,18 @@
 }
 
 .dynamicButtonParent .goBackbtn{
-        font-size: 24px;
+        width:50%;
+        font-size: 20px;
         font-weight: bold;
         font-family: 'Times New Roman', Times, serif;
         background-color: rgb(30, 81, 135);
         color:white;
         border:6px solid rgba(255, 255, 255, 0.59);
 }
- .fashionaddtocartbtn
-{
-        font-size: 24px;
+.dynamicaddtocartbtn
+{       
+        width:100%;
+        font-size: 22px;
         font-weight: bold;
         font-family: 'Times New Roman', Times, serif;
         background-color: rgb(193, 206, 222);
@@ -66,24 +75,34 @@
    
   
 }
- .fashionaddtocartbtn:hover{
+.dynamicaddtocartbtn:hover{
     background-color: thistle;
 }
 @media screen and (min-width:300px) and (max-width:667px){
-    .dynamicParent{
-        display: flex;
-        flex-wrap: wrap;
-        flex-direction: column;
-        border:2px solid red;
-      }
-    
-    .dynamicDescripition{
+      .dynamiccontainer{
         width:100%;
-        /* border: 2px solid black; */
-        box-sizing: border-box;
+        flex-direction: row;
+        justify-content: space-evenly;
+        /* border:3px solid green; */
+    }
+    .dynamicimgparent{
+        width:36%;
+        height:50vh;
+    }
+    .dynamicimgparent img{
+        width:90%;
+    }
+    .dynamicDescripition{
+        width:60%;
+        font-size: 14px;
+        /* border:2px solid black; */
+        display: flex;
+        /* flex-direction: column; */
+        flex-wrap: wrap;
+      
     }
     .dynamicDescripition ul h2 {
-        font-size: 24px;
+        font-size: 18px;
     }
     .dynamicDescripition ul li{
         font-size: 20px;
@@ -92,24 +111,50 @@
         display: flex;
         flex-direction: row;
     }
-    
+    .dynamicButtonParent .goBackbtn{
+        /* width:40%; */
+        height: 58%;
+        font-size: 20px;
+    }
+    .dynamicaddtocartbtn
+    {      height: 58%;
+            font-size:20px ;
+            /* width:100%; */
+    }
 }
 @media screen and (min-width:668px) and (max-width:1180px){
-    .dynamicParent{
-        width:80%;
+    .dynamiccontainer{
+        width:100%;
+        flex-direction: row;
+        justify-content: space-evenly;
+        /* border:3px solid green; */
     }
-    .dynamicDescripition{
+    .dynamicimgparent{
         width:50%;
+        height:50vh;
     }
-    .dynamicDescripition ul h2 {
-        font-size: 40px;
-    }
-    .dynamicDescripition ul li{
-        font-size: 45px;
-    }
-    .dynamicButtonParent .goBackbtn{
+    .dynamicimgparent img{
         width:100%;
     }
-    
+    .dynamicDescripition{
+        width:40%;
+        /* border: 2px solid green; */
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+    .dynamicDescripition ul h2 {
+        font-size: 30px;
+    }
+    .dynamicDescripition ul li{
+        font-size: 20px;
+    }
+    .dynamicButtonParent .goBackbtn{
+        width:40%;
+    }
+    .dynamicaddtocartbtn
+    {     
+            width:90%;
+    }
 }
 

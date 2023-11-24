@@ -1,23 +1,22 @@
 .moredetailsParent{
     margin-top:5%;
     display:flex;
-    /* border:2px solid green; */
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    
-    
-
+    /* border:2px solid green; */
 }
 .moredetailscontainer{
+    width:50%;
    display: flex;
    flex-direction: row;
-   justify-content: space-evenly;
+   justify-content: space-between;
    /* border:5px solid rgb(225, 235, 225); */
    
 }
 .moredetailsimgparent{
     
-    height:70vh;
+    height:50vh;
     border: 20px solid white;
     display: flex;
     justify-content: space-around;
@@ -28,14 +27,14 @@
    
 }
 .moredetailsimgparent img{
-    width:80%;
+    width:70%;
     border:5px solid rgb(225, 235, 225);
-    height:70%
+    height:80%
 }
 .moredetailsDescripition{
-    width:34%;
+    width:50%;
     /* border:2px solid red; */
- 
+    line-height: 6vh;
 }
 .moredetailsDescripition ul li{ 
     list-style: none;
@@ -45,6 +44,10 @@
 .moredetailsDescripition ul h2{
     color:rgb(14, 14, 100);
 }
+.moredetailsDescripition ul li span{
+    font-size: 20px;
+    font-weight: bold;
+}
 .moredetailsButtonParent{
     display: flex;
     flex-direction:row; 
@@ -53,16 +56,18 @@
 }
 
 .moredetailsButtonParent .goBackbtn{
-        font-size: 24px;
+        width:50%;
+        font-size: 20px;
         font-weight: bold;
         font-family: 'Times New Roman', Times, serif;
         background-color: rgb(30, 81, 135);
         color:white;
         border:6px solid rgba(255, 255, 255, 0.59);
 }
- .fashionaddtocartbtn
-{
-        font-size: 24px;
+ .moredetailsaddtocartbtn
+{     
+        width:100%;
+        font-size: 22px;
         font-weight: bold;
         font-family: 'Times New Roman', Times, serif;
         background-color: rgb(193, 206, 222);
@@ -71,52 +76,87 @@
    
   
 }
- .fashionaddtocartbtn:hover{
+.moredetailsaddtocartbtn:hover{
     background-color: thistle;
 }
 @media screen and (min-width:300px) and (max-width:667px){
 
-  .moredetailscontainer{
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    border:2px solid red;
-  }
-
-.moredetailsDescripition{
-    width:100%;
-    /* border: 2px solid black; */
-    box-sizing: border-box;
-}
-.moredetailsDescripition ul h2 {
-    font-size: 24px;
-}
-.moredetailsDescripition ul li{
-    font-size: 20px;
-}
-.moredetailsButtonParent {
-    display: flex;
-    flex-direction: row;
-}
-
+    .moredetailscontainer{
+        width:100%;
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+    .moredetailsimgparent{
+        width:40%;
+        height:50vh;
+    }
+    .moredetailsimgparent img{
+        width:90%;
+    }
+    .moredetailsDescripition{
+        width:50%;
+        font-size: 16px;
+        /* border:2px solid black; */
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+    .moredetailsDescripition ul h2 {
+        font-size: 18px;
+    }
+    .moredetailsDescripition ul li{
+        font-size: 20px;
+    }
+    .moredetailsButtonParent {
+        display: flex;
+        flex-direction: row;
+    }
+    .moredetailsButtonParent .goBackbtn{
+        width:50%;
+    }
+    .moredetailsaddtocartbtn
+    {     
+            font-size:18px ;
+            width:100%;
+    }
 }
 
 
 @media screen and (min-width:668px) and (max-width:1180px){
     .moredetailscontainer{
+        width:100%;
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+    .moredetailsimgparent{
+        width:50%;
+        height:50vh;
+    }
+    .moredetailsimgparent img{
         width:80%;
     }
     .moredetailsDescripition{
-        width:50%;
+        width:40%;
+        font-size: 20px;
+        /* border:2px solid black; */
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+     
+        
     }
     .moredetailsDescripition ul h2 {
-        font-size: 40px;
+        font-size: 30px;
     }
     .moredetailsDescripition ul li{
-        font-size: 45px;
+        font-size: 20px;
+
     }
     .moredetailsButtonParent .goBackbtn{
-        width:100%;
+        width:40%;
     }
-    
+    .moredetailsaddtocartbtn
+    {     
+            width:90%;
+    }
 }
