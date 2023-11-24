@@ -244,7 +244,7 @@ const Navbar = () => {
 
           <Route path="/" element={<Home />} />
     
-        
+         <Route element={<PrivateComponent/>}>
           <Route path="/all" element={<All />} />
           <Route path="/all/titanWatch" element={<Titan />} />
           <Route path="/all/snacks" element={<Snacks />} />
@@ -273,7 +273,7 @@ const Navbar = () => {
           {/* Dynamic Route try */}
           <Route path="/moreDetails/:id" element={<MoreDetails />} />
           <Route path="/moreDetail/:id" element={<Dynamicpage />} />
-            <Route element={<PrivateComponent/>}>
+           
           <Route path="/addtocart/:id" element={<AddtoCart />} />
           </Route>
           <Route path="*" element={<Error />} />
