@@ -24,7 +24,7 @@ function MoreDetails(){
                     id = item.id,
                     image = item.image,
                     price= parseInt(item.price),
-                    // Brand = item.Number_of_Items
+            
                   }= item;
                 return(
                     <div key={index}  className="moredetailsParent">
@@ -36,20 +36,20 @@ function MoreDetails(){
                                 
                                 <ul>
                                     <h2>Descripition:-</h2>
-                                    <h3>Brand :{item.subCategory}</h3>
+                                    <li><span>Brand :</span>{item.subCategory}</li>
                                     <li>{item.product_name}</li>
                                     <li>{item.key1}</li>
                                     <li>{item.key2}</li>
                                     <li>{item.key3}</li>
                                     <li>{item.key4}</li>
-                                    <li>Rating:{item.rating}</li>
-                                    <h3>Rs:{item.price}</h3>
+                                    <li><span>Rating:</span>{item.rating}</li>
+                                    <h3><span>Price:</span>{item.price}Rs.</h3>
                                 </ul>
                                 
                                 <div className="moredetailsButtonParent">
-                                    <button onClick={()=>navigate(-1)} className="goBackbtn">Buy Now </button>
+                                    <button onClick={()=>navigate(-1)} className="goBackbtn">Back </button>
                                     <NavLink to={`/addtocart/${item.id}`}>
-                                        <button onClick={()=>dispatch(addtoCart({id,image,price}))} className='fashionaddtocartbtn'>Add To Cart</button> 
+                                        <button onClick={()=>dispatch(addtoCart({id,image,price}))} className='moredetailsaddtocartbtn'>Add To Cart</button> 
                                     </NavLink>
                                 </div> 
                             </div>

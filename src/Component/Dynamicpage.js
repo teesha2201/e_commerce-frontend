@@ -36,20 +36,20 @@ function Dynamicpage(){
                                 
                                 <ul>
                                     <h2>Descripition:-</h2>
-                                    <h3>Brand :{item.subCategory}</h3>
+                                    <li><span>Brand:</span>{item.subCategory}</li>
                                     <li>{item.product_name}</li>
-                                    <li>Speciality :{item.Speciality}</li>
-                                    <li>Diet Type : Vegetarian</li>
-                                    <li>Number of Items : 1</li>
+                                    <li><span>Speciality :</span>{item.Speciality}</li>
+                                    <li><span>Diet Type :</span> Vegetarian</li>
+                                    <li><span>Number of Items :</span> 1</li>
                                     
-                                    <li>Rating:{item.rating}</li>
-                                    <h3>Rs:{item.price}</h3>
+                                    <li><span>Rating:</span>{item.rating}</li>
+                                    <li><span>Price:</span>{item.price}Rs.</li>
                                 </ul>
                                 
                                 <div className="dynamicButtonParent">
                                     <button onClick={()=>navigate(-1)} className="goBackbtn"> Back</button>
                                     <NavLink to={`/addtocart/${item.id}`}>
-                                        <button onClick={()=>dispatch(addtoCart({id,image,price}))} className='fashionaddtocartbtn'>Add To Cart</button> 
+                                        <button onClick={()=>dispatch(addtoCart({id,image,price}))} className='dynamicaddtocartbtn'>Add To Cart</button> 
                                     </NavLink>
                                 </div> 
                             </div>
