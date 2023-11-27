@@ -35,7 +35,7 @@ const BeautyProduct = () => {
               id = item.id,
               image = item.image,
               price= parseInt(item.price),
-              // Brand = item.Number_of_Items
+              subCategory= item.subCategory
             }= item;
             return (
                 <div className="beautyimg-wrapper item" key={index}>
@@ -55,7 +55,7 @@ const BeautyProduct = () => {
                     </h3>
                     <div className="beautybtn-wrapper item ">
                       <NavLink to={`/addtocart/${item.id}`}>
-                      <button onClick={()=>dispatch(addtoCart({id,image,price}))} className='beautyaddtocartbtn'>Add To Cart</button>
+                      <button onClick={()=>dispatch(addtoCart({id,image,price,subCategory}))} className='beautyaddtocartbtn'>Add To Cart</button>
                       </NavLink>
                       {/* <button onClick={()=>{}} className='beautyremoveitembtn'>Buy Now </button> */}
                     </div>

@@ -2,10 +2,12 @@
 import React,{useState,useEffect} from 'react'
 import { Outlet,NavLink } from 'react-router-dom'
 import AddFooter from './Footer'
+import {useDispatch} from "react-redux";
+import {addtoCart} from "../Redux/Slice";
 
 const Iphone = () => {
   const [iphone,setIphone] =useState([])
- 
+  const dispatch = useDispatch();
     useEffect(()=>{
       async function apiFun(){
         const fetchdata = await fetch("https://new-ecommerce-backend-m62a.onrender.com/api/getdatafromproductstore")
@@ -36,6 +38,12 @@ const Iphone = () => {
             
            <div className="electronicscart-wrapper">
             {iphone.filter((item)=>item.subCategory==="iphone").map((item)=>{
+              const {
+                id = item.id,
+                image = item.image,
+                price= parseInt(item.price),
+                subCategory= item.subCategory
+              }= item;
                 return (
                     <div className="electronicsimg-wrapper item" key={item.id}>
                       <NavLink to={`/moreDetails/${item.id}`}>
@@ -61,7 +69,7 @@ const Iphone = () => {
                       
                         <div className="electronicsbtn-wrapper item ">
                         <NavLink to={`/addtoCart/${item.id}`}>
-                          <button onClick={()=>{}} className='electronicsaddtocartbtn'>Add To Cart</button>
+                        <button onClick={()=>dispatch(addtoCart({id,image,price,subCategory}))} className='electronicsaddtocartbtn'>Add To Cart</button>
                         </NavLink>  
                           {/* <button onClick={()=>{}} className='electronicsremoveitembtn'>Buy Now</button> */}
                         </div>

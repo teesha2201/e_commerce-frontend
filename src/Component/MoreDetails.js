@@ -24,7 +24,7 @@ function MoreDetails(){
                     id = item.id,
                     image = item.image,
                     price= parseInt(item.price),
-            
+                    subCategory= item.subCategory
                   }= item;
                 return(
                     <div key={index}  className="moredetailsParent">
@@ -49,7 +49,7 @@ function MoreDetails(){
                                 <div className="moredetailsButtonParent">
                                     <button onClick={()=>navigate(-1)} className="goBackbtn">Back </button>
                                     <NavLink to={`/addtocart/${item.id}`}>
-                                        <button onClick={()=>dispatch(addtoCart({id,image,price}))} className='moredetailsaddtocartbtn'>Add To Cart</button> 
+                                    <button onClick={()=>dispatch(addtoCart({id,image,price,subCategory}))} className='moredetailsaddtocartbtn'>Add To Cart</button> 
                                     </NavLink>
                                 </div> 
                             </div>

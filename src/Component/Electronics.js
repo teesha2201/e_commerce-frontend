@@ -44,6 +44,7 @@ const Electronics = () => {
                 id = item.id,
                 image = item.image,
                 price= parseInt(item.price),
+                subCategory= item.subCategory
               }= item;
                 return (
                     <div className="electronicsimg-wrapper item" key={index}>
@@ -70,7 +71,7 @@ const Electronics = () => {
                       
                         <div className="electronicsbtn-wrapper item ">
                         <NavLink to={`/addtocart/${item.id}`}>
-                          <button onClick={()=>dispatch(addtoCart({id,image,price}))} className='electronicsaddtocartbtn'>Add To Cart </button>
+                        <button onClick={()=>dispatch(addtoCart({id,image,price,subCategory}))} className='electronicsaddtocartbtn'>Add To Cart </button>
                         </NavLink>  
                           {/* <button onClick={()=>{}} className='electronicsremoveitembtn'>Buy Now</button> */}
                         </div>

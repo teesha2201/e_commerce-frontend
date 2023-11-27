@@ -59,7 +59,7 @@ const All = () => {
                     </span>
                     <div className="allbtn-wrapper item ">
                       <NavLink to={`/addtocart/${item.id}`}>
-                        <button onClick={()=>dispatch(addtoCart({id,image,price,subCategory}))} className='alladdtocartbtn'>Add To Cart</button>
+                      <button onClick={()=>dispatch(addtoCart({id,image,price,subCategory}))} className='alladdtocartbtn'>Add To Cart</button>
                       </NavLink>  
                       {/* <button onClick={()=>{}} className='allremoveitembtn'>Buy Now </button> */}
                     </div>

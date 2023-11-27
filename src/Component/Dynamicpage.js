@@ -24,7 +24,7 @@ function Dynamicpage(){
                     id = item.id,
                     image = item.image,
                     price= parseInt(item.price),
-                    // Brand = item.Number_of_Items
+                    subCategory= item.subCategory
                   }= item;
                 return(
                     <div key={index}  className="dynamicParent">
@@ -49,7 +49,7 @@ function Dynamicpage(){
                                 <div className="dynamicButtonParent">
                                     <button onClick={()=>navigate(-1)} className="goBackbtn"> Back</button>
                                     <NavLink to={`/addtocart/${item.id}`}>
-                                        <button onClick={()=>dispatch(addtoCart({id,image,price}))} className='dynamicaddtocartbtn'>Add To Cart</button> 
+                                    <button onClick={()=>dispatch(addtoCart({id,image,price,subCategory}))} className='dynamicaddtocartbtn'>Add To Cart</button> 
                                     </NavLink>
                                 </div> 
                             </div>

@@ -36,7 +36,7 @@ const Grocery = () => {
               id = item.id,
               image = item.image,
               price= parseInt(item.price),
-              // Brand = item.Number_of_Items
+              subCategory= item.subCategory
             }= item;
             return (
                 
@@ -59,7 +59,7 @@ const Grocery = () => {
                     </span>
                     <div className="grocerybtn-wrapper item ">
                     <NavLink to={`/addtocart/${item.id}`}>  
-                      <button onClick={()=>dispatch(addtoCart({id,image,price}))} className='groceryaddtocartbtn'>Add To Cart</button>
+                    <button onClick={()=>dispatch(addtoCart({id,image,price,subCategory}))} className='groceryaddtocartbtn'>Add To Cart</button>
                     </NavLink>  
                       {/* <button onClick={()=>{}} className='groceryremoveitembtn'>Buy Now </button> */}
                     </div>
